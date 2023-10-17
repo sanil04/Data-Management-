@@ -1,0 +1,16 @@
+import os
+
+# Define the path to the Downloads folder
+downloads_path = os.path.expanduser("~/Downloads")
+
+# Define the file name to search for
+file_name = "student-mat.csv"
+
+# Search for the file in the Downloads folder
+for root, dirs, files in os.walk(downloads_path):
+    if file_name in files:
+        file_path = os.path.join(root, file_name)
+        print(f"Found the file at: {file_path}")
+        break
+else:
+    print(f"The file '{file_name}' was not found in the Downloads folder.")
